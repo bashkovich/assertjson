@@ -209,6 +209,9 @@ func (f *ASCIIFormatter) processItem(value interface{}, deltas []Delta, position
 			case *Deleted:
 				f.printRecursive(positionStr, d.Value, ASCIIDeleted)
 
+			case *Moved:
+				continue
+
 			default:
 				return errors.New("unknown Delta type detected")
 			}

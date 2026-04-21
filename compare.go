@@ -68,6 +68,9 @@ func (c Comparer) filterDeltas(deltas []diff.Delta, ignoreAdded bool) []diff.Del
 			if ignoreAdded {
 				continue
 			}
+
+		case *diff.Moved:
+			continue
 		}
 
 		result = append(result, delta)
